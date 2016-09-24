@@ -1,17 +1,13 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+CREATE TABLE `employee_profile_data` (
+ `ID` int(11) NOT NULL,
+ `FirstName` text NOT NULL COMMENT 'Full Name',
+ `LastName` text NOT NULL COMMENT 'Last (Optional middle) Name',
+ `BirthDate` date NOT NULL,
+ `ResidentialAddress` text NOT NULL COMMENT 'Current living address',
+ `PreviousWorkplaceAddress` text NOT NULL COMMENT 'Workplace Institution or Office address',
+ `EducationInstitutionAddress` text NOT NULL,
+ `OtherAddresses` text NOT NULL COMMENT 'Please Specify',
+ `ContactNumbers` text NOT NULL COMMENT 'Please Specify Home and/or personal numbers, official and workplace numbers etc.',
+ PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
 
-# Custom for Visual Studio
-*.cs     diff=csharp
-
-# Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
