@@ -1,3 +1,3 @@
-SELECT FirstName, LastName, BirthDate FROM employee_profile_data WHERE 
+SELECT * FROM `employee_profile` WHERE 
   (YEAR(CURDATE())-YEAR(BirthDate)) > 30;
   
