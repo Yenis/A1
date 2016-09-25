@@ -1,4 +1,4 @@
-SELECT FirstName, LastName FROM employee_profile_data WHERE
+SELECT * FROM `employee_address` WHERE
   ResidentialAddress LIKE '%Tuzl%' OR
   PreviousWorkplaceAddress LIKE '%Tuzl%' OR
   EducationInstitutionAddress LIKE '%Tuzl%' OR
