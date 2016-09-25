@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2016 at 09:52 AM
+-- Generation Time: Sep 25, 2016 at 12:25 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -23,19 +23,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employee_profile_data`
+-- Table structure for table `employee_profile`
 --
 
-CREATE TABLE `employee_profile_data` (
+CREATE TABLE `employee_profile` (
   `ID` int(11) NOT NULL,
   `FirstName` text NOT NULL COMMENT 'Full Name',
   `LastName` text NOT NULL COMMENT 'Last (Optional middle) Name',
-  `BirthDate` date NOT NULL,
+  `BirthDate` date NOT NULL COMMENT 'Date Format: YYYY-MM-DD'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_address`
+--
+
+CREATE TABLE `employee_address` (
+  `ID` int(11) NOT NULL,
   `ResidentialAddress` text NOT NULL COMMENT 'Current living address',
-  `PreviousWorkplaceAddress` text NOT NULL COMMENT 'Workplace Institution or Office address',
+  `PreviousWorkplaceAddress` text NOT NULL  COMMENT 'Workplace Institution or Office address',
   `EducationInstitutionAddress` text NOT NULL,
-  `OtherAddresses` text NOT NULL COMMENT 'Please Specify',
-  `ContactNumbers` text NOT NULL COMMENT 'Please Specify Home and/or personal numbers, official and workplace numbers etc.'
+  `OtherAddresses` text NOT NULL  COMMENT 'Please Specify'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_contact_numbers`
+--
+
+CREATE TABLE `employee_contact_numbers` (
+  `ID` int(11) NOT NULL,
+  `PersonalORHomeNumber` text NOT NULL,
+  `WorkOROfficeNumber` text  COMMENT 'Optional'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -43,9 +64,21 @@ CREATE TABLE `employee_profile_data` (
 --
 
 --
--- Indexes for table `employee_profile_data`
+-- Indexes for table `employee_profile`
 --
-ALTER TABLE `employee_profile_data`
+ALTER TABLE `employee_profile`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `employee_address`
+--
+ALTER TABLE `employee_address`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `employee_contact_numbers`
+--
+ALTER TABLE `employee_contact_numbers`
   ADD PRIMARY KEY (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
