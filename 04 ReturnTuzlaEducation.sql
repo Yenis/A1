@@ -1,3 +1,3 @@
-SELECT FirstName, LastName, EducationInstitutionAddress FROM employee_profile_data WHERE 
+SELECT ID, EducationInstitutionAddress FROM `employee_address` WHERE
   EducationInstitutionAddress LIKE '%Tuzl%';
   
