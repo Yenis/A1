@@ -1,0 +1,17 @@
+public class MyDuoClass {
+   private static MyDuoClass instance = null;
+   protected MyDuoClass() {
+   // Exists only to defeat instantiation.
+      }
+    private static final int LIMIT = 2;
+    private static int count = 0;
+    private MyDuoClass() {}
+    public static MyDuoClass getInstance() {
+      if (count < LIMIT) {
+            MyDuoClass = new MyDuoClass();
+            count++;
+            return MyDuoClass;
+        } 
+        return null;
+    }
+}
