@@ -1,7 +1,7 @@
 public class MyDuoClass {
    private static MyDuoClass instance = null;
    protected MyDuoClass() {
-   // Exists only to defeat instantiation.
+   // Exists to defeat instantiation.
       }
     private static final int LIMIT = 2;
     private static int count = 0;
